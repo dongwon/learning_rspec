@@ -1,0 +1,26 @@
+require_relative "spec_helper"
+require "mytest"
+
+describe Mytest::Mytest do
+  describe ".add" do
+    context "given an empty string" do
+      it "returns zero" do
+        expect(Mytest::Mytest.add("")).to eql(0)
+      end
+    end
+
+    context "two numbers" do
+      context "given '2,4'" do
+        it "returns 6" do
+          expect(Mytest::Mytest.add("2,4")).to eql(6)
+        end
+      end
+
+      context "given '17,100'" do
+        it "returns 117" do
+          expect(Mytest::Mytest.add("17,100")).to eql(117)
+        end
+      end
+    end
+  end
+end
